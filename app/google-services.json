@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275075753168",
+    "project_id": "lets-buy-54542",
+    "storage_bucket": "lets-buy-54542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275075753168:android:109257fc9b263c0a8d2ad5",
+        "android_client_info": {
+          "package_name": "com.esports.letsbuy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5z1_ZU7WrPAg9DfmDA-3Mx1Ay1s45Wg8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
