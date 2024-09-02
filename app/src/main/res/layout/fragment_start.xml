@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9C27B0"
-    tools:context=".Views.starter.StartFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Views.starter.StartFragment"
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@mipmap/ic_launcher_round"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:textColor="@color/white"
-        android:textSize="48dp"
-        android:gravity="center"/>
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:layout_margin="32dp"
+        android:textColor="#E64A4A"
+        android:text="@string/wellcome_message"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textSize="@dimen/_24sdp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="#FF304F"
+        app:strokeWidth="@dimen/_2sdp"
+        android:textColor="#040E47"
+        android:text="@string/login"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_112sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:backgroundTint="#FF304F"
+        />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="#801C1C"
+        app:strokeWidth="@dimen/_2sdp"
+        android:textColor="#040E47"
+        android:text="@string/register"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        />
+
+</LinearLayout>

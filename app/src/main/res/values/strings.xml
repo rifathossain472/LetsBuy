@@ -2,4 +2,9 @@
     <string name="app_name">Lets Buy</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wellcome_message">Wellcome to let\'s buy app</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="login_to_let_s_buy">Login to Let\'s Buy</string>
+    <string name="register_to_let_s_buy">Register to Let\'s buy</string>
 </resources>

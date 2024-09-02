@@ -1,14 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.login.LoginFragment">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Views.login.LoginFragment"
+    android:background="#FFFFFF">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@mipmap/ic_launcher_round" />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:text="@string/login_to_let_s_buy"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="#FF304F"
+        android:textSize="@dimen/_24sdp" />
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:hint="user email"
+        app:endIconMode="clear_text"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        android:layout_marginVertical="@dimen/_4sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:hint="user password"
+        app:endIconMode="password_toggle"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textWebPassword" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_marginTop="@dimen/_32sdp"
+        android:id="@+id/btn_login"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:text="@string/login"
+        android:textColor="#040E47"
+        android:textSize="@dimen/_16sdp"
+        app:strokeColor="#FF304F"
+        app:strokeWidth="@dimen/_2sdp"
+        android:backgroundTint="#FF304F"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="Don't have an account?"
+        android:textColor="#FF304F"
+        android:textSize="@dimen/_12sdp" />
+
+    <Button
+        android:id="@+id/btn_register"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:text="@string/register"
+        android:textColor="#040E47"
+        android:textSize="@dimen/_16sdp"
+        app:strokeColor="#FF9800"
+        app:strokeWidth="@dimen/_2sdp" />
+
+
+</LinearLayout>
