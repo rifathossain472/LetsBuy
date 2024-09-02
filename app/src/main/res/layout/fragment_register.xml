@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginVertical="@dimen/_4sdp"
-        android:hint="user name">
+        android:hint="@string/user_name">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_name"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginVertical="@dimen/_4sdp"
-        android:hint="user email">
+        android:hint="@string/user_email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:hint="user password">
+        android:hint="@string/user_password">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
@@ -90,7 +90,7 @@
             android:id="@+id/btnCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customer"
+            android:text="@string/customer"
             android:textSize="@dimen/_14sdp"
             style="?attr/materialButtonOutlinedStyle"
             />
@@ -98,7 +98,7 @@
             android:id="@+id/btnSeller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Seller"
+            android:text="@string/seller"
             android:textSize="@dimen/_14sdp"
             style="?attr/materialButtonOutlinedStyle"
             />
@@ -106,7 +106,7 @@
             android:id="@+id/btnAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Admin"
+            android:text="@string/admin"
             android:textSize="@dimen/_14sdp"
             style="?attr/materialButtonOutlinedStyle"
             />
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="#040E47"
         android:textSize="@dimen/_16sdp"
         android:backgroundTint="#FF304F"/>
@@ -131,7 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:text="Already have an account?"
+        android:text="@string/already_have_an_account"
         android:textColor="#FF304F"
         android:textSize="@dimen/_12sdp" />
 
@@ -143,7 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#040E47"
         android:textSize="@dimen/_16sdp" />
 

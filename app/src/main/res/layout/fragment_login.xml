@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:hint="user email"
+        android:hint="@string/user_email"
         app:endIconMode="clear_text"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true"
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
-        android:hint="user password"
+        android:hint="@string/user_password"
         app:endIconMode="password_toggle"
         app:hintAnimationEnabled="true"
         app:hintEnabled="true">
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginTop="@dimen/_8sdp"
-        android:text="Don't have an account?"
+        android:text="@string/don_t_have_an_account"
         android:textColor="#FF304F"
         android:textSize="@dimen/_12sdp" />
 
