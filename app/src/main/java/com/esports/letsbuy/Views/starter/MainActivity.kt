@@ -1,5 +1,6 @@
 package com.esports.letsbuy.Views.starter
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,4 +18,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
+
 }
