@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Views.register.RegisterFragment"
-    android:background="#FFFFFF">
+    tools:context=".Views.register.RegisterFragment">
 
     <ImageView
         android:layout_width="140dp"
@@ -26,40 +26,39 @@
         android:textSize="@dimen/_24sdp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        app:endIconMode="clear_text"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
+        android:id="@+id/nameContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginVertical="@dimen/_4sdp"
         android:hint="@string/user_name"
-        app:helperTextTextColor="#FF0202"
+        app:endIconMode="clear_text"
         app:helperTextEnabled="true"
-        android:id="@+id/nameContainer"
-        >
+        app:helperTextTextColor="#FF0202"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text"
-            android:lines="1"/>
+            android:lines="1" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        app:endIconMode="clear_text"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
+        android:id="@+id/emailContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginVertical="@dimen/_4sdp"
         android:hint="@string/user_email"
+        app:endIconMode="clear_text"
         app:helperTextTextColor="#FF0202"
-        android:id="@+id/emailContainer">
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
@@ -72,18 +71,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        app:endIconMode="password_toggle"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
+        android:id="@+id/passwordContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:hint="@string/user_password"
-        app:helperTextTextColor="#FF0202"
-        app:helperTextEnabled="true"
         app:counterEnabled="true"
         app:counterMaxLength="20"
-        android:id="@+id/passwordContainer">
+        app:endIconMode="password_toggle"
+        app:helperTextEnabled="true"
+        app:helperTextTextColor="#FF0202"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_password"
@@ -91,7 +90,7 @@
             android:layout_height="match_parent"
             android:inputType="textWebPassword"
             android:lines="1"
-            android:maxLength="20"/>
+            android:maxLength="20" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -100,47 +99,46 @@
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        >
+        android:layout_marginTop="@dimen/_8sdp">
+
         <Button
             android:id="@+id/btnCustomer"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/customer"
-            android:textSize="@dimen/_14sdp"
-            style="?attr/materialButtonOutlinedStyle"
-            />
+            android:textSize="@dimen/_14sdp" />
+
         <Button
             android:id="@+id/btnSeller"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/seller"
-            android:textSize="@dimen/_14sdp"
-            style="?attr/materialButtonOutlinedStyle"
-            />
+            android:textSize="@dimen/_14sdp" />
+
         <Button
             android:id="@+id/btnAdmin"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/admin"
-            android:textSize="@dimen/_14sdp"
-            style="?attr/materialButtonOutlinedStyle"
-            />
+            android:textSize="@dimen/_14sdp" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <Button
         android:id="@+id/btn_register"
         style="?attr/materialButtonOutlinedStyle"
-        app:strokeColor="#FF304F"
-        app:strokeWidth="@dimen/_2sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:layout_marginTop="@dimen/_32sdp"
+        android:backgroundTint="#FF304F"
         android:text="@string/register"
         android:textColor="#040E47"
         android:textSize="@dimen/_16sdp"
-        android:backgroundTint="#FF304F"/>
+        app:strokeColor="#FF304F"
+        app:strokeWidth="@dimen/_2sdp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -154,14 +152,14 @@
     <Button
         android:id="@+id/btn_login"
         style="?attr/materialButtonOutlinedStyle"
-        app:strokeColor="#FF9800"
-        app:strokeWidth="@dimen/_2sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_32sdp"
         android:text="@string/login"
         android:textColor="#040E47"
-        android:textSize="@dimen/_16sdp" />
+        android:textSize="@dimen/_16sdp"
+        app:strokeColor="#FF9800"
+        app:strokeWidth="@dimen/_2sdp" />
 
 </LinearLayout>
 

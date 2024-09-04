@@ -33,6 +33,11 @@ class RegisterFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
             setListener()
         }
+
+        binding.btnLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+
         return binding.root
     }
 
@@ -134,7 +139,6 @@ class RegisterFragment : Fragment() {
         Toast.makeText(context, "Registration Successfully", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_registerFragment_to_dashBoardFragment)
     }
-
 }
 
 
