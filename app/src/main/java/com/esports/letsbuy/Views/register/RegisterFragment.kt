@@ -1,22 +1,22 @@
 package com.esports.letsbuy.Views.register
 
 import android.os.Bundle
-import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.ToggleButton
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.esports.letsbuy.R
+import com.esports.letsbuy.core.DataState
 import com.esports.letsbuy.databinding.FragmentRegisterBinding
 import com.esports.letsbuy.isEmpty
-import java.util.regex.Pattern
 
 
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
+    val viewModel: RegistrationViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -38,7 +38,29 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
 
+        registrationObserver()
+
         return binding.root
+    }
+
+    private fun registrationObserver() {
+        viewModel.registrationResponse.observe(viewLifecycleOwner){
+
+            when(it){
+                is DataState.Error ->{
+                    Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
+                }
+                is DataState.Loading -> {
+                    Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT).show()
+
+                }
+                is DataState.Success -> {
+                    Toast.makeText(context, "${it.data}", Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
+        }
     }
 
     /*private fun emailFocusListener() {
@@ -136,8 +158,18 @@ class RegisterFragment : Fragment() {
     }
 
     private fun registerUser() {
-        Toast.makeText(context, "Registration Successfully", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(R.id.action_registerFragment_to_dashBoardFragment)
+        //Toast.makeText(context, "Registration Successfully", Toast.LENGTH_SHORT).show()
+        val user = User(
+            binding.etName.text.toString(),
+            binding.etEmail.text.toString(),
+            binding.etPassword.text.toString(),
+            "Seller",
+            ""
+        )
+
+        viewModel.userRegistration(user)
+
+        //findNavController().navigate(R.id.action_registerFragment_to_dashBoardFragment)
     }
 }
 

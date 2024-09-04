@@ -9,15 +9,20 @@
     android:orientation="vertical"
     tools:context=".Views.register.RegisterFragment">
 
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:src="@mipmap/ic_launcher_round" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        app:lottie_rawRes="@raw/ecom_lottie_2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_marginVertical="@dimen/_16sdp"
         android:fontFamily="@font/bebas_neue"
         android:gravity="center"
         android:text="@string/register_to_let_s_buy"

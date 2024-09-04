@@ -9,11 +9,14 @@
     tools:context=".Views.starter.StartFragment"
     android:background="#FFFFFF">
 
-
-    <ImageView
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:src="@mipmap/ic_launcher_round"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="@dimen/_200sdp"
+        app:lottie_rawRes="@raw/ecom_lottie_1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"/>
 
     <TextView
         android:layout_width="match_parent"
