@@ -7,27 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.esports.letsbuy.R
+import com.esports.letsbuy.base.BaseFragment
 import com.esports.letsbuy.databinding.FragmentStartBinding
 
 
-class StartFragment : Fragment() {
+class StartFragment : BaseFragment<FragmentStartBinding>(FragmentStartBinding::inflate) {
 
-    lateinit var binding: FragmentStartBinding
-
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        binding = FragmentStartBinding.inflate(inflater, container, false)
-
-        setListener()
-        return binding.root
-
+    override fun allObserver() {
 
     }
 
-    private fun setListener() {
+    override fun setListener() {
         with(binding) {
             btnLogin.setOnClickListener {
                 findNavController().navigate(R.id.action_startFragment_to_loginFragment)

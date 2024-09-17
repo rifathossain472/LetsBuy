@@ -8,21 +8,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.esports.letsbuy.R
+import com.esports.letsbuy.Views.register.RegistrationViewModel
+import com.esports.letsbuy.base.BaseFragment
 import com.esports.letsbuy.databinding.FragmentLoginBinding
 import com.esports.letsbuy.isEmpty
 
 
-class LoginFragment : Fragment() {
-    lateinit var binding: FragmentLoginBinding
+class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
+    override fun allObserver() {
 
+    }
+
+
+    override fun setListener() {
         binding.btnLogin.setOnClickListener {
             setClickListener()
         }
@@ -30,8 +30,6 @@ class LoginFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
-
-        return binding.root
     }
 
     private fun setClickListener() {

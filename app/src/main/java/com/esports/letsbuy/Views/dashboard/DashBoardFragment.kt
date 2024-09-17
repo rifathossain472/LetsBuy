@@ -5,18 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewbinding.ViewBinding
 import com.esports.letsbuy.R
+import com.esports.letsbuy.base.BaseFragment
+import com.esports.letsbuy.databinding.FragmentDashBoardBinding
 
-class DashBoardFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+class DashBoardFragment : BaseFragment<FragmentDashBoardBinding>(FragmentDashBoardBinding::inflate) {
+    override fun allObserver() {
 
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dash_board, container, false)
+    override fun setListener() {
+
     }
 
 

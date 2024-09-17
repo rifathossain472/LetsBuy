@@ -9,54 +9,61 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.esports.letsbuy.R
+import com.esports.letsbuy.base.BaseFragment
 import com.esports.letsbuy.core.DataState
 import com.esports.letsbuy.databinding.FragmentRegisterBinding
 import com.esports.letsbuy.isEmpty
 
 
-class RegisterFragment : Fragment() {
-    private lateinit var binding: FragmentRegisterBinding
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
     val viewModel: RegistrationViewModel by viewModels()
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+    override fun allObserver() {
+        registrationObserver()
+    }
 
-
+    override fun setListener() {
         emailFocusListener()
         passwordFocusListener()
-
         binding.btnRegister.setOnClickListener {
-            setListener()
+            clickListener()
         }
 
         binding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
+    }
 
-        registrationObserver()
+    private fun clickListener() {
+        with(binding) {
+            etName.isEmpty()
+            etEmail.isEmpty()
+            etPassword.isEmpty()
 
-        return binding.root
+            if (!etName.isEmpty() && !etEmail.isEmpty() && !etPassword.isEmpty()) {
+                submitForm()
+            }
+        }
     }
 
     private fun registrationObserver() {
-        viewModel.registrationResponse.observe(viewLifecycleOwner){
+        viewModel.registrationResponse.observe(viewLifecycleOwner) {
 
-            when(it){
-                is DataState.Error ->{
+            when (it) {
+                is DataState.Error -> {
+                    loading.dismiss()
                     Toast.makeText(context, it.message, Toast.LENGTH_LONG).show()
                 }
+
                 is DataState.Loading -> {
                     Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT).show()
-
+                    loading.show()
                 }
+
                 is DataState.Success -> {
                     Toast.makeText(context, "${it.data}", Toast.LENGTH_SHORT).show()
-
+                    loading.dismiss()
                 }
             }
 
@@ -128,17 +135,6 @@ class RegisterFragment : Fragment() {
         return null
     }
 
-    private fun setListener() {
-        with(binding) {
-            etName.isEmpty()
-            etEmail.isEmpty()
-            etPassword.isEmpty()
-
-            if (!etName.isEmpty() && !etEmail.isEmpty() && !etPassword.isEmpty()) {
-                submitForm()
-            }
-        }
-    }
 
     private fun submitForm() {
 
@@ -166,10 +162,7 @@ class RegisterFragment : Fragment() {
             "Seller",
             ""
         )
-
         viewModel.userRegistration(user)
-
-        //findNavController().navigate(R.id.action_registerFragment_to_dashBoardFragment)
     }
 }
 
